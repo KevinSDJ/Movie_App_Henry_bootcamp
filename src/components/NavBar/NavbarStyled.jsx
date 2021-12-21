@@ -19,7 +19,7 @@ export const Header = styled.header`
         color:white;
         gap:0 5px;
         h1{
-            font-size: 2em;
+            font-size: 1.5em;
             font-family: Roboto;
             margin: 0;
             @media screen and (max-width:600px){
