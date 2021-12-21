@@ -52,7 +52,7 @@ export const Ul = styled.ul`
         box-sizing: border-box;
         a{
             font-family: Roboto;
-            font-size: 0.7em;
+            font-size: 1em;
             color:white;
             width: max-content;
             &:hover{
