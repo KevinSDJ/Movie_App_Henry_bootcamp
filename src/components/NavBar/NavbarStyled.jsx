@@ -5,7 +5,7 @@ import styled from 'styled-components';
 export const Header = styled.header`
     z-index: 2;
     position:fixed;
-    height: 56px;
+    height: 40px;
     width: 100%;
     top: 0;
     background-color: #303236;
@@ -19,7 +19,7 @@ export const Header = styled.header`
         color:white;
         gap:0 5px;
         h1{
-            font-size: 1.5em;
+            font-size: 1.2em;
             font-family: Roboto;
             margin: 0;
             @media screen and (max-width:600px){
@@ -52,7 +52,7 @@ export const Ul = styled.ul`
         box-sizing: border-box;
         a{
             font-family: Roboto;
-            font-size: 1em;
+            font-size: 0.7em;
             color:white;
             width: max-content;
             &:hover{
