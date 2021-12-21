@@ -21,10 +21,11 @@ export default function MovSearchs() {
                             <div id="card_hover" >
                                 <h3>{t.title}</h3>
                                 <Link to={`/movie/${t.id}`}>view details</Link>
-                                <button id={t.title} onClick={
+                                <button className="notFavourite" id={t.title} onClick={
                                     (e) => {
                                         e.preventDefault()
                                         var peli = moviesLoaded.filter(m => m.title === e.target.id)
+                                        document.getElementById(e.target.id).className="isFavourite"
                                         dispatch(addMovieFavorite(peli[0]))
                                     }} type="button"></button>
                             </div>
@@ -45,10 +46,11 @@ export default function MovSearchs() {
                             <div id="card_hover" >
                                  <h3>{t.title}</h3>
                                 <Link to={`/movie/${t.id}`}>view details</Link>
-                                <button id={t.title} onClick={
+                                <button className="notFavourite" id={t.title} onClick={
                                     (e) => {
                                         e.preventDefault()
                                         var peli = moviesTrending.filter(m => m.title === e.target.id)
+                                        document.getElementById(e.target.id).className="isFavourite"
                                         dispatch(addMovieFavorite(peli[0]))
                                     }} type="button"></button>
                             </div>
