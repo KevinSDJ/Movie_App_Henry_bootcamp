@@ -43,7 +43,8 @@ export const Card= styled.div`
        position: absolute;
        width: 100%;
        height: 100%;
-      background-color:transparent;      
+      background-color:transparent;
+      flex-direction:column;
    }
    &:hover{
     #card_hover{

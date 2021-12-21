@@ -20,6 +20,7 @@ export default function MovSearchs() {
                         (t, i) => <Card key={i}  poster={`https://image.tmdb.org/t/p/original/${t.poster_path}`}>
                             <div id="card_hover" >
                                 <Link to={`/movie/${t.id}`}>{t.title}</Link>
+                                <p>{t.overview}</p>
                                 <button id={t.title} onClick={
                                     (e) => {
                                         e.preventDefault()
@@ -43,6 +44,7 @@ export default function MovSearchs() {
                             <img loading="lazy" src={`https://image.tmdb.org/t/p/original/${t.poster_path}`} alt={t.id}/>
                             <div id="card_hover" >
                                 <Link to={`/movie/${t.id}`}>{t.title}</Link>
+                                <p>{t.overview}</p>
                                 <button id={t.title} onClick={
                                     (e) => {
                                         e.preventDefault()
