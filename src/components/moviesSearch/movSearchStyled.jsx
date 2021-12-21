@@ -26,6 +26,7 @@ export const SearchsCont= styled.div`
     }
 `
 export const Card= styled.div`
+   box-sizing: border-box;
    position:relative;
    list-style: none;
    min-width:200px;
@@ -37,6 +38,7 @@ export const Card= styled.div`
        height: 100%;
    }
    #card_hover{
+       box-sizing: content-box;
        opacity: 0;
        z-index:-1;
        display:flex;
@@ -45,6 +47,14 @@ export const Card= styled.div`
        height: 100%;
       background-color:transparent;
       flex-direction:column;
+      p{
+          font-size:x-small;
+          padding: 2% 5%;
+          color:white;
+          margin: 0 auto;
+          text-align: justify;
+          
+      }
    }
    &:hover{
     #card_hover{
