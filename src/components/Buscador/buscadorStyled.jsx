@@ -18,7 +18,7 @@ export const FormContent= styled.div`
     backdrop-filter: blur(5px);
     position:absolute;
     top:50%;
-    height: 50%;
+    height: 60%;
     width:100%;
     z-index:2;
 `
