@@ -7,7 +7,7 @@ export const Form = styled.form`
     padding: 10px;
     backdrop-filter: blur(5px);
     position: absolute;
-    top: -48px;
+    top: -45px;
     right: 0;
     display:flex;
     flex-direction: row;
