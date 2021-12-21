@@ -56,6 +56,10 @@ export const Card= styled.div`
           margin: 0 auto;
           text-align: justify;
       }
+      a{
+          text-decoration: none;
+          color:white;
+      }
       button{
           position:absolute;
           bottom: 0;
