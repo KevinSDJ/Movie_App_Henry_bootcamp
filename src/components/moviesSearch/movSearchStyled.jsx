@@ -7,7 +7,7 @@ export const SearchsCont= styled.div`
     h5{
        text-align: left;
        margin-left: 50px;
-       padding: 0.5em;
+       padding: 0.2em;
        color:white;
     }
     .cardsCont{
@@ -18,8 +18,8 @@ export const SearchsCont= styled.div`
         transition: 500ms;
         overflow-x: scroll;
         display: flex;
-        height: 350px;
-        gap:0 5%;
+        height: 300px;
+        gap:0 2%;
         align-items:center;
         
     }
@@ -27,7 +27,7 @@ export const SearchsCont= styled.div`
 export const Card= styled.div`
    position:relative;
    list-style: none;
-   min-width:250px ;
+   min-width:200px ;
    height: 300px;
    img{
        position:absolute;
