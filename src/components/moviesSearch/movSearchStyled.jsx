@@ -19,7 +19,7 @@ export const SearchsCont= styled.div`
         transition: 500ms;
         overflow-x: scroll;
         display: flex;
-        height: 300px;
+        height: 320px;
         gap:0 2%;
         align-items:center;
         
