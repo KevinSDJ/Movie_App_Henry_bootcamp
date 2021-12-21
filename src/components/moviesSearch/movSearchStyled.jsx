@@ -47,13 +47,18 @@ export const Card= styled.div`
        height: 100%;
       background-color:transparent;
       flex-direction:column;
+      align-items: center;
       p{
+          text-align: center;
           font-size:x-small;
           padding: 2% 5%;
           color:white;
           margin: 0 auto;
           text-align: justify;
-          
+      }
+      button{
+          position:absolute;
+          bottom: 0;
       }
    }
    &:hover{
