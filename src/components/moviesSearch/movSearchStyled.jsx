@@ -7,6 +7,7 @@ export const SearchsCont= styled.div`
     h5{
        text-align: left;
        margin-left: 50px;
+       font-size: 1em;
        padding: 0.2em;
        color:white;
     }
