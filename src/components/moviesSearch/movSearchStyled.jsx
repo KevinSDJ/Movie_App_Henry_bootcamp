@@ -48,9 +48,9 @@ export const Card= styled.div`
       background-color:transparent;
       flex-direction:column;
       align-items: center;
-      p{
+      h3{
+          font-size: 100%;
           text-align: center;
-          font-size:x-small;
           padding: 2% 5%;
           color:white;
           margin: 0 auto;
@@ -59,10 +59,19 @@ export const Card= styled.div`
       a{
           text-decoration: none;
           color:white;
+          &:hover{
+              color:cyan;
+          }
       }
       button{
           position:absolute;
           bottom: 0;
+          .isFavourite{
+              
+          }
+          .notFavourite{
+              
+          }
       }
    }
    &:hover{

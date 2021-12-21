@@ -19,14 +19,14 @@ export default function MovSearchs() {
                     {moviesLoaded ? moviesLoaded.map(
                         (t, i) => <Card key={i}  poster={`https://image.tmdb.org/t/p/original/${t.poster_path}`}>
                             <div id="card_hover" >
-                                <Link to={`/movie/${t.id}`}>{t.title}</Link>
-                                <p>{t.overview}</p>
+                                <h3>{t.title}</h3>
+                                <Link to={`/movie/${t.id}`}>view details</Link>
                                 <button id={t.title} onClick={
                                     (e) => {
                                         e.preventDefault()
                                         var peli = moviesLoaded.filter(m => m.title === e.target.id)
                                         dispatch(addMovieFavorite(peli[0]))
-                                    }} type="button">ADD/FAV</button>
+                                    }} type="button"></button>
                             </div>
 
 
@@ -43,14 +43,14 @@ export default function MovSearchs() {
                         (t, i) => <Card key={i} >
                             <img loading="lazy" src={`https://image.tmdb.org/t/p/original/${t.poster_path}`} alt={t.id}/>
                             <div id="card_hover" >
-                                <Link to={`/movie/${t.id}`}>{t.title}</Link>
-                                <p>{t.overview}</p>
+                                 <h3>{t.title}</h3>
+                                <Link to={`/movie/${t.id}`}>view details</Link>
                                 <button id={t.title} onClick={
                                     (e) => {
                                         e.preventDefault()
                                         var peli = moviesTrending.filter(m => m.title === e.target.id)
                                         dispatch(addMovieFavorite(peli[0]))
-                                    }} type="button">ADD/FAV</button>
+                                    }} type="button"></button>
                             </div>
 
 
