@@ -18,7 +18,7 @@ export const SearchsCont= styled.div`
         transition: 500ms;
         overflow-x: scroll;
         display: flex;
-        height: 400px;
+        height: 350px;
         gap:0 5%;
         align-items:center;
         
@@ -28,7 +28,7 @@ export const Card= styled.div`
    position:relative;
    list-style: none;
    min-width:250px ;
-   height: 350px;
+   height: 300px;
    img{
        position:absolute;
        z-index:1;

@@ -17,8 +17,8 @@ export const FormContent= styled.div`
     background-color: rgba(9, 124, 176, 0.5);
     backdrop-filter: blur(5px);
     position:absolute;
-    top:45%;
-    height: 55%;
+    top:50%;
+    height: 50%;
     width:100%;
     z-index:2;
 `
