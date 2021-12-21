@@ -28,7 +28,7 @@ export const SearchsCont= styled.div`
 export const Card= styled.div`
    position:relative;
    list-style: none;
-   width:200px ;
+   width:250px ;
    height: 300px;
    img{
        position:absolute;
