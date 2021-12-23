@@ -44,7 +44,7 @@ export default function Carousel() {
                 <Cap/>
                 <div className="carousel-inner">
                     {trendingMov.map((e, i) => <div key={e.id} className={`carousel-item ${i === 0 && "active"}`}>
-                        <img loading='lazy' className="d-block w-100" src={`https://image.tmdb.org/t/p/original/${e.backdrop_path}`} alt={`${childsLide[i]}`} />
+                        <img  className="d-block w-100" src={`https://image.tmdb.org/t/p/original/${e.backdrop_path}`} alt={`${childsLide[i]}`} />
                     </div>)}
                 </div>
                 <a className="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">

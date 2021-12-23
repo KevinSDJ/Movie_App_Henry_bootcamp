@@ -25,7 +25,7 @@ export const SearchsCont= styled.div`
         
     }
 `
-export const Card= styled.div`
+export const C= styled.div`
    box-sizing: border-box;
    position:relative;
    list-style: none;

@@ -34,7 +34,7 @@ const initialState = {
            case REMOVE_FAVORITE_MOVIE:
              return {
                ...state,
-               moviesFavourites:state.moviesFavourites.filter(m=>m.imdbID!==action.payload.toString())
+               moviesFavourites:state.moviesFavourites.filter(m=>m.id!==Number(action.payload))
              }
            case SET_TRENDING:
              return {

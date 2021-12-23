@@ -1,14 +1,14 @@
 import React from "react";
-import { Link } from 'react-router-dom'
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector} from "react-redux";
 import { addMovieFavorite } from '../../actions/index'
-import { Card, SearchsCont } from './movSearchStyled'
+import {SearchsCont } from './movSearchStyled'
+import Card from "./Card";
 
 
 
 
 export default function MovSearchs() {
-    let dispatch = useDispatch()
+   
     let moviesLoaded = useSelector(state => state.moviesLoaded)
     let moviesTrending=useSelector(state=>state.moviesTrending)
     if (moviesLoaded?.length>1) {
@@ -17,21 +17,13 @@ export default function MovSearchs() {
                 <h5>Results</h5>
                 <div className="cardsCont">
                     {moviesLoaded ? moviesLoaded.map(
-                        (t, i) => <Card key={i}  poster={`https://image.tmdb.org/t/p/original/${t.poster_path}`}>
-                            <div id="card_hover" >
-                                <h3>{t.title}</h3>
-                                <Link to={`/movie/${t.id}`}>view details</Link>
-                                <button className="notFavourite" id={t.title} onClick={
-                                    (e) => {
-                                        e.preventDefault()
-                                        var peli = moviesLoaded.filter(m => m.title === e.target.id)
-                                        document.getElementById(e.target.id).className="isFavourite"
-                                        dispatch(addMovieFavorite(peli[0]))
-                                    }} type="button"></button>
-                            </div>
-
-
-                        </Card>) : null}
+                        (t, i) =>  <Card key={i} 
+                            img={`https://image.tmdb.org/t/p/original/${t.poster_path}`}
+                            title={t.title}
+                            id={t.id}
+                            action={addMovieFavorite}
+                            movies={moviesLoaded}
+                        />) : null}
                 </div>
             </SearchsCont>
         )
@@ -41,22 +33,13 @@ export default function MovSearchs() {
                 <h5>Trending Week</h5>
                 <div className="cardsCont">
                     {moviesTrending ? moviesTrending.map(
-                        (t, i) => <Card key={i} >
-                            <img loading="lazy" src={`https://image.tmdb.org/t/p/original/${t.poster_path}`} alt={t.id}/>
-                            <div id="card_hover" >
-                                 <h3>{t.title}</h3>
-                                <Link to={`/movie/${t.id}`}>view details</Link>
-                                <button className="notFavourite" id={t.title} onClick={
-                                    (e) => {
-                                        e.preventDefault()
-                                        var peli = moviesTrending.filter(m => m.title === e.target.id)
-                                        document.getElementById(e.target.id).className="isFavourite"
-                                        dispatch(addMovieFavorite(peli[0]))
-                                    }} type="button"></button>
-                            </div>
-
-
-                        </Card>) : null}
+                        (t, i) => <Card key={i} 
+                            img={`https://image.tmdb.org/t/p/original/${t.poster_path}`}
+                            title={t.title}
+                            id={t.id}
+                            action={addMovieFavorite}
+                            movies={moviesTrending}
+                        />) : null}
                 </div>
             </SearchsCont>
         )

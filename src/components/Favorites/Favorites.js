@@ -1,28 +1,28 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { Link } from 'react-router-dom';
-import './Favorites.css';
+import React from "react";
+import { useSelector } from "react-redux";
 import {removeFavoriteMovie}  from '../../actions/index.js';
+import Card from "../moviesSearch/Card.js";
+import {Div} from './favouriteStyled';
 
-export class ConnectedList extends Component {
-
-  render() {
-    return (
-      <div>
-        <h2>Películas Favoritas</h2>
+export default function  ConnectedList(){
+  let favouriteMovie= useSelector(state=> state.moviesFavourites)
+  return (
+    <Div>
+        <h2>Your Favourite Movie</h2>
         <ul>
-          {this.props.moviesFavourites? this.props.moviesFavourites.map(m=><li key={m.id}><Link to={`/movie/${m.id}`}>{m.title}</Link>
-          <span><button id={m.id} onClick={(e)=> this.props.dispatch(removeFavoriteMovie(e.target.id))}>REMOVE</button></span></li>):" "}
+          {favouriteMovie?.length>0? favouriteMovie.map(m=><Card
+            key={m.id}
+            img={`https://image.tmdb.org/t/p/original/${m.poster_path}`}
+            id={m.id}
+            title={m.title}
+            movies={favouriteMovie}
+            action={removeFavoriteMovie}
+            status={true}
+          /> ):null}
         </ul>
-      </div>
-    );
-  }
+      </Div>
+  ) 
 }
 
-function mapStateToProps(state){
-  return {
-    moviesFavourites:state.moviesFavourites
-  }
-}
 
-export default connect(mapStateToProps)(ConnectedList);
+
