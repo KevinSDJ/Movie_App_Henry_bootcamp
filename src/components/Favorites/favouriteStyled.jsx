@@ -25,6 +25,19 @@ flex-direction: column;
     }
 }
 `
+export const Div2= styled.div`
+   height: 100vh;
+   display: flex;
+   align-items:center;
+   justify-content: center;
+   &>div{
+       align-items: center;
+       margin:0 auto;
+       span{
+           font-size: 26px;
+       }
+   }
 
+`
 
 
