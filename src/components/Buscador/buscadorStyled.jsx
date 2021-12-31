@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 
 export const Form = styled.form`
-    background-color: rgba(9, 124, 176, 0.5);
     padding: 10px;
     backdrop-filter: blur(5px);
     position: absolute;
@@ -11,23 +10,30 @@ export const Form = styled.form`
     right: 0;
     display:flex;
     flex-direction: row;
-    align-items: flex-start;
-    input{
+    align-items: flex-start; 
+    div{
+        background-color: white;
+        border-radius: 0.2em;
+        input{
         outline:none;
         border:none;
         border-radius: 0.2em;
         padding-left: 5px;
+        width:0;
     }
-    div{
-        background-color: white;
-        border-radius: 0.2em;
         button{
             background-color:transparent;
             border:none;
+            align-items:center;
+        }
+    &:hover{
+        input{
+            width: auto;
         }
     }
+    }
 `
-export const FormContent= styled.div`
+export const FormContent = styled.div`
     background-color: rgba(9, 124, 176, 0.5);
     backdrop-filter: blur(5px);
     position:absolute;
