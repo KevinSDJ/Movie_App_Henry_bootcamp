@@ -12,6 +12,20 @@ export const Form = styled.form`
     display:flex;
     flex-direction: row;
     align-items: flex-start;
+    input{
+        outline:none;
+        border:none;
+        border-radius: 0.2em;
+        padding-left: 5px;
+    }
+    div{
+        background-color: white;
+        border-radius: 0.2em;
+        button{
+            background-color:transparent;
+            border:none;
+        }
+    }
 `
 export const FormContent= styled.div`
     background-color: rgba(9, 124, 176, 0.5);

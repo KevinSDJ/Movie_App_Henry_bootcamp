@@ -3,6 +3,7 @@ import {useDispatch} from "react-redux";
 import {getMovies } from "../../actions/index.js";
 import MovSearchs from "../moviesSearch/movSearch.js";
 import {Form,FormContent} from './buscadorStyled';
+import {FaSearch} from 'react-icons/fa';
 
 
 export default function Buscador () {
@@ -35,10 +36,11 @@ export default function Buscador () {
               id="title"
               autoComplete="off"
               value={state.title}
+              placeholder="search movie"
               onChange={(e)=>handleChange(e)}
             />
+            <button type="submit"><FaSearch/></button>
           </div>
-          <button type="submit">SEARCH</button>
         </Form>
         <MovSearchs/>
       </FormContent>

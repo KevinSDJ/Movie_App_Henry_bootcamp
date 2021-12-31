@@ -58,7 +58,7 @@ export const C= styled.div`
       }
       a{
           text-decoration: none;
-          color:white;
+          color:blue;
           &:hover{
               color:cyan;
           }
