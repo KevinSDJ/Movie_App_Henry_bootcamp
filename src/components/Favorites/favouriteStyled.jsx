@@ -3,7 +3,7 @@ export const Div= styled.div`
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 height: 100vh;
 display: flex;
-padding-top: 10%;
+padding-top: 5%;
 flex-direction: column;
 align-items: center;
 h2{
