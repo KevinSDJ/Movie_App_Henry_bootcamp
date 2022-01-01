@@ -4,6 +4,8 @@ import {getMovies } from "../../actions/index.js";
 import MovSearchs from "../moviesSearch/movSearch.js";
 import {Form,FormContent} from './buscadorStyled';
 import {FaSearch} from 'react-icons/fa';
+import {IconContext} from 'react-icons';
+
 
 
 export default function Buscador () {
@@ -39,7 +41,10 @@ export default function Buscador () {
               placeholder="search movie"
               onChange={(e)=>handleChange(e)}
             />
-            <button type="submit"><FaSearch/></button>
+            <IconContext.Provider value={{color:"grey"}}>
+              <button type="submit"><FaSearch /></button>
+            </IconContext.Provider>
+            
           </div>
         </Form>
         <MovSearchs/>

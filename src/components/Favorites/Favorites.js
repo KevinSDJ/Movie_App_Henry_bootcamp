@@ -12,7 +12,7 @@ export default function  ConnectedList(){
 
   if(favouriteMovie?.length){
     return(<Div>
-      <h2>Your Favourite Movie</h2>
+      <h2>Favourites</h2>
       <ul>
         {favouriteMovie.map(m=><Card
           key={m.id}

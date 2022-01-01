@@ -1,31 +1,31 @@
 import styled from 'styled-components';
 export const Div= styled.div`
-border:1px solid black;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 height: 100vh;
 display: flex;
-padding:10% 10% 0 10%;
+padding-top: 10%;
 flex-direction: column;
+align-items: center;
+h2{
+    font-size:24px;
+    color:white;
+    font-family: 'Roboto', sans-serif;
+}
 &> ul{
     position:relative;
     display: flex;
     justify-content: center;
-    gap:0 2%;
-    flex-wrap: wrap;
-    height: auto;
-    min-height: 400px;
+    gap:20px 20px;
+    flex-wrap: wrap;  
+    width:80%;
+    padding:20px 5px;
+    align-items: center;
     background-color: rgba(9, 124, 176, 0.5);
-    backdrop-filter: blur(5px);
-    &::before{
-        content: " ";
-        background-color: gray;
-        z-index: 2;
-        position:absolute;
-        justify-content: center;
-        margin:0 auto;
-    }
+    
 }
 `
 export const Div2= styled.div`
+   @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
    height: 100vh;
    display: flex;
    align-items:center;
@@ -34,7 +34,9 @@ export const Div2= styled.div`
        align-items: center;
        margin:0 auto;
        span{
+           color:white;
            font-size: 26px;
+           font-family: 'Roboto', sans-serif;
        }
    }
 

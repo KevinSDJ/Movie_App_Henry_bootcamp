@@ -36,6 +36,7 @@ export const Header = styled.header`
     backdrop-filter: blur(10px);
 `
 export const Ul = styled.ul`
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
     margin: 0;
     padding: 0;
     list-style: none;
@@ -51,7 +52,7 @@ export const Ul = styled.ul`
         gap:0 10%;
         box-sizing: border-box;
         a{
-            font-family: Roboto;
+            font-family: 'Roboto', sans-serif;
             font-size: 1em;
             color:white;
             width: max-content;
