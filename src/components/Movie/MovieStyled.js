@@ -61,7 +61,7 @@ export const Div2 = styled.div`
             h3{
                color:white;
                text-shadow: 1px 1px 2px black;
-               font-size:2.5em;
+               font-size:2em;
                margin-bottom:0;
                font-family: 'Roboto', sans-serif;
             }
