@@ -18,15 +18,23 @@ export const Rating= styled.span`
       border:5px solid ${props=> status(props.r)};
       margin:2% 0;
       border-radius: 10em;
-      padding:5px 10px;
+      padding:20px 20px;
       color:white;
       font-size:1.2em;
       position:relative;
+      display:flex;
+      align-items: center;
+      justify-content: space-around;
       &:before{
           content:"Rating";
           color:white;
           position: absolute;
           right:-70px;
+      }
+      &:after{
+          content:"${props=> props.rt}";
+          position:absolute;
+          display:flex;
       }
 `
 export const Div2 = styled.div`

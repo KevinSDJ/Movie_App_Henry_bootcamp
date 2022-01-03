@@ -53,7 +53,7 @@ export default function Movie(props) {
                                     <p>{movieDetail.overview}</p>
                                 </div> 
                             </div>
-                            <Rating r={Math.round(movieDetail.vote_average)}>{movieDetail.vote_average}</Rating>
+                            <Rating r={Math.round(movieDetail.vote_average)} rt={movieDetail.vote_average}></Rating>
                             <h5>Genres</h5>
                             <p>{movieDetail.genres?movieDetail.genres.map((e,i)=>e.name+" ,"):null}</p>
                         </div>
