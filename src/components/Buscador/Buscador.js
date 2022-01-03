@@ -22,10 +22,15 @@ export default function Buscador () {
   }
   function handleSubmit(e) {
     e.preventDefault();
-    dispatch(getMovies(state.title))
+    if(state.title){
+      dispatch(getMovies(state.title))
     setState(prev=>{
       return {...prev,title:""}
     })
+    }else{
+      alert("title not entered")
+    }
+    
   }
 
  

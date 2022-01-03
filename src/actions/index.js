@@ -31,7 +31,8 @@ export function getMovies(titulo) {
         .then(response => response.json())
         .then(data => {
           dispatch({ type: "GET_MOVIES", payload:data.results });
-        });
+        },(error)=>{alert(error)});
+        
     };
   }
 export function setTrending(){
