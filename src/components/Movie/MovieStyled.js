@@ -13,7 +13,7 @@ function status(number){
 export const Div = styled.div`
     background-color: gray;
 `
-export const Raiting= styled.span`
+export const Rating= styled.span`
       background-color: #4D4E4D;
       border:5px solid ${props=> status(props.r)};
       margin:2% 0;
@@ -23,7 +23,7 @@ export const Raiting= styled.span`
       font-size:1.2em;
       position:relative;
       &:before{
-          content:"Raiting";
+          content:"Rating";
           color:white;
           position: absolute;
           right:-70px;

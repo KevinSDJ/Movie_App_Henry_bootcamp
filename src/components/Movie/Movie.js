@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getMovieDetail } from '../../actions/index';
 import ReactPlayer from 'react-player';
-import { Div, Div2, LoadingDetail ,Raiting} from './MovieStyled';
+import { Div, Div2, LoadingDetail ,Rating} from './MovieStyled';
 
 
 
@@ -53,7 +53,7 @@ export default function Movie(props) {
                                     <p>{movieDetail.overview}</p>
                                 </div> 
                             </div>
-                            <Raiting r={Math.round(movieDetail.vote_average)}>{movieDetail.vote_average}</Raiting>
+                            <Rating r={Math.round(movieDetail.vote_average)}>{movieDetail.vote_average}</Rating>
                             <h5>Genres</h5>
                             <p>{movieDetail.genres?movieDetail.genres.map((e,i)=>e.name+" ,"):null}</p>
                         </div>
