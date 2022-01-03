@@ -53,7 +53,7 @@ export const Div2 = styled.div`
                 display: flex;
                 flex-direction: row;
                 gap:0 10px;
-                align-items:center;
+                
                 &>div{
                     display: flex;
                     flex-direction: column;                 
