@@ -68,11 +68,11 @@ export const Div2 = styled.div`
             span{
                 margin-top:2%;
                 color:white;
-                font-size:1.2em;
+                font-size:1em;
             }
             .clasific{
                 color:#F1DB26;
-                font-size: 1.4em;
+                font-size: 1em;
                 border:1px solid #F1DB26;
                 border-radius: 3px;
                 padding: 0 5px;
