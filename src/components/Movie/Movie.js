@@ -44,7 +44,7 @@ export default function Movie(props) {
                     <div>
                         <div className="movie-detail">
                             <div className="dataMov">
-                                <img src={`https://image.tmdb.org/t/p/original/${movieDetail.poster_path}`} width={"300px"} alt={movieDetail.Title} />
+                                <img src={`https://image.tmdb.org/t/p/original/${movieDetail.poster_path}`} width={"250px"} alt={movieDetail.Title} />
                                 <div>
                                     <h3>{movieDetail.title}</h3>
                                     <span>{release? <span className='clasific'>{release[0].release_dates[0].certification}</span>: null} - {movieDetail.release_date}({release? release[0].iso_3166_1:null})</span>
