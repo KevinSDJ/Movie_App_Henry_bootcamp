@@ -1,49 +1,80 @@
-import React from 'react';
-import { connect } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { getMovieDetail } from '../../actions/index';
-import './Movie.css';
+import ReactPlayer from 'react-player';
+import { Div, Div2, LoadingDetail ,Raiting} from './MovieStyled';
 
-class Movie extends React.Component {
-    componentDidMount(){
-        this.props.dispatch(getMovieDetail(this.props.id.toString()))
-       
-        setTimeout(()=>{
-                    document.getElementById('msg').hidden=true;
-                    document.getElementById('detail').hidden=false
-                },(2000))
-        
-    };
-    
-  
-   
 
-    render() {
+
+export default function Movie(props) {
+    let [isLoading, setState] = useState(true)
+    let [trailer, setTrailer] = useState(null)
+    let [release,setRelease] = useState(null)
+    let movieDetail = useSelector(state => state.movieDetail)
+    let dispatch = useDispatch()
+    useEffect(() => {
+        fetch(`https://api.themoviedb.org/3/movie/${props.id}/videos?language=en-US&api_key=1b8860ae930c966f835fc2abaafdade9`)
+            .then(r => r.json())
+            .then(rs => {
+                let trailers = rs.results.filter(e => e.type === "Trailer")
+                setTrailer(`https://www.youtube.com/embed/${trailers[trailers.length - 1].key}`)
+            })
+            .finally(()=>{
+                fetch(`https://api.themoviedb.org/3/movie/${props.id}/release_dates?api_key=1b8860ae930c966f835fc2abaafdade9`)
+                .then(r=> r.json())
+                .then(rs=>{
+                    let i= rs.results.filter(e=> e.iso_3166_1==="US")
+                    setRelease(i)
+                })
+            })
+    }, [props.id])
+    useEffect(() => {
+        dispatch(getMovieDetail(props.id.toString()))
+        if (isLoading) {
+            setTimeout(() => {
+                setState(!isLoading)
+            }, (2000))
+        }
+    }, [dispatch, isLoading, props.id])
+
+    if (!isLoading) {
         return (
-            
-            <div className="movie-detail">
-                <span id="msg">Wait charger</span>
-                <div hidden id="detail">
-                    {this.props?<div>
-                   
-                   <div><img src={`https://image.tmdb.org/t/p/original/${this.props.movieDetail.poster_path}`} width={"300px"} alt={this.props.movieDetail.Title}/></div>
-                   <article>
-                       <h3>{this.props.movieDetail.title}</h3>
-                       <div><span><h4>Genero:</h4>{this.props.movieDetail.Genre}</span><span><h4>Año:</h4>{this.props.movieDetail.Year}</span></div>
-                   </article>
-                   
-
-                </div>:<div>opps no hay datos</div>}
-                </div>
-                
-            </div>
+            <Div> 
+                {movieDetail ? <Div2 image={`https://image.tmdb.org/t/p/original/${movieDetail.backdrop_path}`}>
+                    <div>
+                        <div className="movie-detail">
+                            <div className="dataMov">
+                                <img src={`https://image.tmdb.org/t/p/original/${movieDetail.poster_path}`} width={"300px"} alt={movieDetail.Title} />
+                                <div>
+                                    <h3>{movieDetail.title}</h3>
+                                    <span>{release? <span className='clasific'>{release[0].release_dates[0].certification}</span>: null} - {movieDetail.release_date}({release? release[0].iso_3166_1:null})</span>
+                                    <span className="tagline">{movieDetail.tagline}</span>
+                                    <h4>Overview</h4>
+                                    <p>{movieDetail.overview}</p>
+                                </div> 
+                            </div>
+                            <Raiting r={Math.round(movieDetail.vote_average)}>{movieDetail.vote_average}</Raiting>
+                            <h5>Genres</h5>
+                            <p>{movieDetail.genres?movieDetail.genres.map((e,i)=>e.name+" ,"):null}</p>
+                        </div>
+                        <ReactPlayer
+                        url={trailer}
+                        playing={true}
+                        width={600}
+                        height={400}
+                        controls={true}
+                    />
+                    </div>       
+                </Div2> : <div>opps an error occurred</div>}
+            </Div>
         );
+    } else {
+        return (
+            <LoadingDetail id="msg">
+                <div className="lds-roller"><div></div><div></div><div></div><div></div></div>
+            </LoadingDetail>)
     }
+
 }
 
-function mapStateToProps(state){
-    return{
-        movieDetail:state.movieDetail,
-    }
-}
 
-export default connect(mapStateToProps)(Movie);

@@ -19,7 +19,7 @@ export function getMovieDetail(index){
     return fetch(`https://api.themoviedb.org/3/movie/${index}?api_key=1b8860ae930c966f835fc2abaafdade9&language=en-US`)
   .then(response => response.json())
   .then(data => {
-    console.log(data)
+    
     dispatch({ type: "GET_MOVIES_DETAIL", payload:data })
   });
   }

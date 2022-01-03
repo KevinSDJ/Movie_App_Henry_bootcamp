@@ -24,7 +24,7 @@ const initialState = {
         }
            
           case GET_MOVIES_DETAIL:
-            console.log(action.payload)
+            
             return{
               ...state,
               movieDetail:action.payload
