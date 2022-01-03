@@ -17,8 +17,8 @@ export const Rating= styled.span`
       background-color: #4D4E4D;
       border:5px solid ${props=> status(props.r)};
       margin:2% 0;
-      border-radius: 2em;
-      padding: 6px 10px;
+      border-radius: 10em;
+      padding:5px 10px;
       color:white;
       font-size:1.2em;
       position:relative;
